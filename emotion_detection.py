@@ -50,11 +50,11 @@ ensemble_pipeline.fit(X_train, y_train)
 
 y_pred = ensemble_pipeline.predict(X_test)
 
-print("\n✅ Accuracy:", accuracy_score(y_test, y_pred))
-print("\n📊 Classification Report:\n", classification_report(y_test, y_pred))
+print("\n Accuracy:", accuracy_score(y_test, y_pred))
+print("\n Classification Report:\n", classification_report(y_test, y_pred))
 
-joblib.dump(ensemble_pipeline, 'final_boss_emotion_model.pkl')
-print("\n📦 Model saved as final_boss_emotion_model.pkl")
+joblib.dump(ensemble_pipeline, 'emotion_detection_model.pkl')
+print("\n Model saved as emotion_detection_model.pkl")
 
 def predict_emotion(text):
     clean = nfx.remove_stopwords(nfx.remove_punctuations(text))
